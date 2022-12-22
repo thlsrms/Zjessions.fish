@@ -15,9 +15,16 @@ Right now there's no Zellij action, as far as I know, for detaching a session fr
 
 ## Installation
  - Fisher
-     `fisher install thlsrms/zjessions.fish`
+    ```fish
+    fisher install thlsrms/zjessions.fish
+    ```
 
 ### Keybinding
  - Open the menu - **`Ctrl+w`**
-	 - Rebind with: *`bind <YOUR_KEY_COMBINATION> __zj_zjessions_menu`* at your startup config.
-	 - You can choose any key combination that fits you better
+    - To remap it: At your startup configuration file:
+    ```fish
+    # Revert Ctrl+w back to its default or `bind \cW -e` to unbind it
+    bind \cW backward-kill-word
+    bind <YOUR_KEY_SEQUENCE> __zj_zjessions_menu
+    ```
+	- You can choose any key combination that fits you better

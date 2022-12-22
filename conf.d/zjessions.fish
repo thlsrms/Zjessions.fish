@@ -3,7 +3,9 @@ if not status is-interactive
 end
 
 
+bind \cW __zj_zjessions_menu
 set -e __ZJESSIONS_OPEN
+
 if test "$ZELLIJ"
     if not contains -- $ZELLIJ_SESSION_NAME $__ZELLIJ_SESSIONS
         __zj_sessions -a $ZELLIJ_SESSION_NAME
@@ -21,12 +23,11 @@ end
 
 function _zjessions_install --on-event zjessions_install
     set -U __ZELLIJ_SESSIONS
-    bind \cW __zj_zjessions_menu
 end
 
 function _zjessions_uninstall --on-event zjessions_uninstall
     set -e __ZELLIJ_SESSIONS
     set -e __ZJESSIONS_OPEN
-    bind -e \cW
+    bind \cW backward-kill-word
 end
 
