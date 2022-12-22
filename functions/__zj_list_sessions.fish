@@ -4,7 +4,9 @@ function __zj_list_sessions -d "List Zellij sessions"
         return 1
     end
     for s in $__ZELLIJ_SESSIONS
-        set_color yellow; printf "\t\t%s\n" "      $s"
+        set_color yellow; printf "\t\t%s" "      $s"
+        if contains -- $s $ZELLIJ_SESSION_NAME; set_color blue; printf "%s" " *"; end
+        printf "\n" ""
     end
     set_color normal
 end
