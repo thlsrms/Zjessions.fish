@@ -6,7 +6,7 @@ This plugin provides a menu to access these functions.
 
 ### Features
 - Create new Zellij sessions
-- List and Close session
+- List and Kill session
 - Attach an open session
 
 
