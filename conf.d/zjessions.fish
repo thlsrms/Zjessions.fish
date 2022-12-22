@@ -1,4 +1,4 @@
-if not status is-interactive && test "$CI" != true
+if not status is-interactive
     exit
 end
 
